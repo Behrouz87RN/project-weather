@@ -9,7 +9,7 @@ body {
     flex-direction: column;
 }
 
-#weather-info {
+.container {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -17,18 +17,40 @@ body {
     text-align: center;
 }
 
-h1 {
+.header {
+    margin-bottom: 20px;
+}
+
+.city-input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.weather-info, .forecast {
+    margin-top: 20px;
+}
+
+.city, .forecast-heading {
+    font-size: 1.5em;
     margin: 0;
-    font-size: 2em;
 }
 
-p {
-    margin: 10px 0;
+.temperature, .description {
     font-size: 1.2em;
+    margin: 10px 0;
 }
 
-#temperature {
-    font-weight: bold;
+.forecast-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Add additional styles based on your design */
+.forecast-list li {
+    margin-bottom: 10px;
+}
