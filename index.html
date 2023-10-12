@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div id="app">
         <div class="header">
             <h1>Weather App</h1>
         </div>
         <div class="input-container">
-            <input type="text" id="city-input" class="city-input" placeholder="Enter city name">
-            <button id="submit-button" class="submit-button">Get Weather</button>
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="submit-button">Get Weather</button>
         </div>
         <div class="weather-info">
-            <h2 class="city" id="city"></h2>
-            <p class="temperature" id="temperature"></p>
-            <p class="description" id="description"></p>
+            <h2 id="city"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
         </div>
-
         <div class="forecast">
-            <h2 class="forecast-heading">5-Day Forecast</h2>
-            <ul class="forecast-list" id="forecast-list"></ul>
+            <h2>5-Day Forecast</h2>
+            <ul id="forecast-list"></ul>
         </div>
     </div>
     <script src="script.js"></script>
