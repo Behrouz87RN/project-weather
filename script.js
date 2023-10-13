@@ -19,6 +19,8 @@ document.getElementById('submit-button').addEventListener('click', function() {
             document.getElementById('city').textContent = `City: ${city}`;
             document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
             document.getElementById('description').textContent = `Description: ${description}`;
+            document.getElementById('icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            document.documentElement.className = data.weather[0].main;
         })
         .catch(error => console.error('Error:', error));
 
@@ -30,7 +32,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
             const forecastContainer = document.getElementById('forecast-list');
             forecastContainer.innerHTML = ''; // Clear previous forecast data
 
-            forecastList.forEach(item => {
+            forecastList.filter(item => item.dt_txt.split(" ")[1].split(":")[0] == 12).forEach(item => {
                 const date = new Date(item.dt * 1000);
                 const dateString = date.toDateString();
                 const minTemp = item.main.temp_min.toFixed(1);
@@ -38,7 +40,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
                 const description = item.weather[0].description;
 
                 const listItem = document.createElement('li');
-                listItem.textContent = `${dateString}: Min Temp: ${minTemp}°C, Max Temp: ${maxTemp}°C, Description: ${description}`;
+                listItem.innerHTML = `<span>${dateString}</span><span><img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png"></span><span>${minTemp}°C --- ${maxTemp}°C</span>`;
 
                 forecastContainer.appendChild(listItem);
             });
