@@ -16,6 +16,21 @@ document.getElementById('submit-button').addEventListener('click', function() {
             const temperature = data.main.temp.toFixed(1);
             const description = data.weather[0].description;
 
+            // const localOffset = new Date().getTimezoneOffset() * 60; // Convert minutes to seconds
+            // const timeDifference = data.timezone + localOffset; // Corrected line
+            const timezoneOffSet  = data.timezone;
+            // Adjust sunrise and sunset times
+            const targetSunrise = new Date((data.sys.sunrise + timezoneOffSet)  * 1000); // Convert to milliseconds
+            const targetSunset = new Date((data.sys.sunset + timezoneOffSet) * 1000); // Convert to milliseconds
+            
+            // Format the times for printing
+            const options = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+            const sunriseString = targetSunrise.toLocaleTimeString('en-US', options);
+            const sunsetString = targetSunset.toLocaleTimeString('en-US', options);
+
+
+            document.getElementById('sunrise').textContent = `sunrise: ${sunriseString}`;
+            document.getElementById('sunset').textContent = `sunset: ${sunsetString}`;
             document.getElementById('city').textContent = `City: ${city}`;
             document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
             document.getElementById('description').textContent = `Description: ${description}`;
