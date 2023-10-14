@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
@@ -23,11 +23,6 @@ body {
   background-color: #A3DEF7;
   color: #164A68;
 }
-/* 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-} */
 
 .weather-app {
   color: #2A5510; 
@@ -117,7 +112,7 @@ body {
 }
 #forecast-list li {
   border-bottom: 1px dashed currentColor;
-/*  padding: 1em;*/
+
 }
 
 #forecast-list li {
@@ -127,4 +122,166 @@ body {
 }
 #forecast-list li img{
   width: 3em;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.app-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 560px;
+}
+
+.Clouds { 
+  background-color: #F4F7F8;
+  color: #F47775;
+}
+.Clear {
+  background-color: #F7E9B9;
+  color: #2A5510;
+}
+.Rain {
+  background-color: #A3DEF7;
+  color: #164A68;
+}
+
+.weather-app {
+  color: #2A5510; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-container {
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.weather-info-container {
+  padding: 10px;
+}
+
+.weather-info {
+  text-align: center;
+}
+
+.forecast-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.forecast {
+  text-align: center;
+}
+
+.weather-app-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.weather-app-header button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+}
+
+.weather-app-main .weather-icon {
+  width: 100px;
+  height: 100px;
+  fill: #333;
+}
+
+.weather-app-main .weather-info h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.weather-app-main .weather-info h3 {
+  font-size: 24px;
+}
+
+.weather-app-main .weather-info h4 {
+  font-size: 18px;
+}
+
+.weather-app-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-app-footer p {
+  font-size: 12px;
+}
+
+#forecast-list {
+  list-style: none;
+  padding: 0;
+}
+
+#forecast-list li {
+  border-bottom: 1px dashed currentColor;
+}
+
+#forecast-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#forecast-list li img{
+  width: 3em;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .weather-info-container {
+    text-align: left;
+  }
+
+  .weather-app-main .weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .weather-app-main .weather-info h2 {
+    font-size: 24px;
+  }
+
+  .weather-app-main .weather-info h3 {
+    font-size: 18px;
+  }
+
+  .weather-app-main .weather-info h4 {
+    font-size: 14px;
+  }
 }
