@@ -55,7 +55,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
                 const description = item.weather[0].description;
 
                 const listItem = document.createElement('li');
-                listItem.innerHTML = `<span>${dateString}</span><span><img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png"></span><span>${minTemp}°C | ${maxTemp}°C</span>`;
+                listItem.innerHTML = `<span>${dateString}</span><span><img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png"></span><span>${minTemp}°C || ${maxTemp}°C</span>`;
 
                 forecastContainer.appendChild(listItem);
             });
